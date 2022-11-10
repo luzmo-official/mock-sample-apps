@@ -1,0 +1,36 @@
+<div class="position-relative">
+  <nav class="navbar navbar-dark" [ngStyle]="{
+    'background-color': '#ab47bc'
+  }">
+    <div class="container">
+      <a class="navbar-brand" href="#">UNIVERSAL SHOES</a>
+      <span class="d-flex navbar-investor position-relative">
+      </span>
+    </div>
+
+  </nav>
+</div>
+
+<div class="login-page">
+  <div class="row justify-content-center align-center mb-2">
+    <div
+      class="col-5 text-center btn btn-outline-danger mx-2"
+      (click)="login('brad')"
+    >
+      Login as Brad
+    </div>
+    <div
+      class="col-5 text-center btn btn-outline-warning mx-2"
+      (click)="login('angelina')"
+    >
+      Login as Angelina
+    </div>
+  </div>
+  <div class="form">
+    <form class="login-form">
+      <input type="email" placeholder="email" name="email" [(ngModel)]="email"/>
+      <input type="password" placeholder="password" name="password" [(ngModel)]="password" />
+      <div class="btn btn-primary login-button" (click)="login()">login</div>
+    </form>
+  </div>
+</div>
