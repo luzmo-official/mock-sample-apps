@@ -37,18 +37,29 @@ jobs:
       - name: Zip FE Files
         run: |
           rm -rf *.zip
-          zip -r -j vue-mock-hello-world.zip mock-fe/vue-mock-hello-world/*
-          zip -r -j react-mock-hello-world.zip mock-fe/react-mock-hello-world/*
-          zip -r -j html-mock-hello-world.zip mock-fe/html-mock-hello-world/*
-          zip -r -j angular-mock-hello-world.zip mock-fe/angular-mock-hello-world/*
+          cd mock-fe/
+          cd vue-mock-hello-world
+          zip -r ../../vue-mock-hello-world.zip *
+          cd ../react-mock-hello-world
+          zip -r ../../react-mock-hello-world.zip *
+          cd ../html-mock-hello-world
+          zip -r ../../html-mock-hello-world.zip *
+          cd ../angular-mock-hello-world
+          zip -r ../../angular-mock-hello-world.zip *
 
       - name: Zip BE Files
         run: |
-          zip -r -j dotnet-mock-hello-world.zip mock-be/dotnet-mock-hello-world/*
-          zip -r -j python-mock-hello-world.zip mock-be/python-mock-hello-world/*
-          zip -r -j java-mock-hello-world.zip mock-be/java-mock-hello-world/*
-          zip -r -j nodejs-mock-hello-world.zip mock-be/nodejs-mock-hello-world/*
-          zip -r -j php-mock-hello-world.zip mock-be/php-mock-hello-world/*
+          cd mock-be/
+          cd dotnet-mock-hello-world
+          zip -r ../../dotnet-mock-hello-world.zip *
+          cd ../python-mock-hello-world
+          zip -r ../../python-mock-hello-world.zip *
+          cd ../java-mock-hello-world
+          zip -r ../../java-mock-hello-world.zip *
+          cd ../nodejs-mock-hello-world
+          zip -r ../../nodejs-mock-hello-world.zip *
+          cd ../php-mock-hello-world
+          zip -r ../../php-mock-hello-world.zip *
 
       # Runs a set of commands using the runners shell
       - name: Upload an invalidate
