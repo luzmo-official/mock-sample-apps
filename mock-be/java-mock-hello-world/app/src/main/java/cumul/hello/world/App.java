@@ -66,12 +66,10 @@ public class App extends NanoHTTPD {
                     // stop
                 }
                 
-                System.out.println("Session" + files.get("postData"));
                 JSONObject userObj = new JSONObject(files.get("postData"));
                 User selectedUser = null;
-                System.out.println("User" + userObj.getString("email") + userObj);
+
                 for (User user : users) {
-                    System.out.println("User email -----> " + (user.email.equals(userObj.getString("email"))) + user.email + userObj.getString("email"));
                     if (user.email.equals(userObj.getString("email"))) {
                         selectedUser = user;
                         break;
@@ -110,6 +108,7 @@ public class App extends NanoHTTPD {
                 response.addHeader("Content-Type", "application/json");
                 return response;
             } else {
+                // Handle GET Request
                 String authToken = session.getHeaders().get("authorization");
                 String token = authToken.split(" ")[1];
 

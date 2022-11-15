@@ -35,7 +35,7 @@ app.MapPost("/login", async delegate(HttpContext context)
         string jsonstring = await reader.ReadToEndAsync();
         // Create token
         var jsonObj = JsonConvert.DeserializeObject<LoginData>(jsonstring);
-        Console.WriteLine(jsonObj.email);
+
         foreach (User user in Users) {
             if (user.email.Equals(jsonObj.email)) {
                 token = JwtBuilder.Create()

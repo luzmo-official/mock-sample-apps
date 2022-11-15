@@ -1,0 +1,1 @@
+Project contains Backend and Frontend code for mock sample app
