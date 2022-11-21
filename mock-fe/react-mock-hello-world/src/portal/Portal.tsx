@@ -4,11 +4,11 @@ import { CumulioDashboardComponent, CumulioDashboard } from "@cumul.io/react-cum
 import { parseJwt } from '../global';
 import './portal.css';
 
-const dashboardId = 'DASHBOARD_ID_HERE';
 const appServer = 'APP_SERVER_HERE';
 const apiHost = 'API_HOST_HERE';
 
 function Portal() {
+  const [dashboardId, setDashboardId] = useState('');
   const navigate = useNavigate();
   const [key, setKey] = useState(null);
   const [token, setToken] = useState(null);
@@ -29,9 +29,14 @@ function Portal() {
           setKey(data.key);
           setToken(data.token);
           console.log(data, key, token);
-          if (ref) {
-            // ref.current?.setAuthorization(data.key, data.token);
-          }
+          setTimeout(() => {
+            ref.current?.getAccessibleDashboards().then(dashboards => {
+              console.log(dashboards);
+              if (dashboards) {
+                setDashboardId(dashboards[0].id);
+              }
+            });
+          }, 100);
         }, 2000);
 
       });

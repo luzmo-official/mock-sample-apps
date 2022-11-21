@@ -3,8 +3,9 @@ import { globalRoot, parseJwt } from '../global';
 import renderHome from '../home';
 import './portal.scss';
 import '@cumul.io/cumulio-dashboard';
+import type { CumulioDashboard } from '@cumul.io/cumulio-dashboard';
 
-const dashboardId = 'DASHBOARD_ID_HERE';
+const dashboardId = '';
 const appServer = 'APP_SERVER_HERE';
 const apiHost = 'API_HOST_HERE';
 
@@ -33,6 +34,13 @@ const render = (root: HTMLElement, auth?: {
   })
   .then(response => response.json())
   .then(data => {
+    setTimeout(() => {
+      const dashboardInstance = document.getElementById('dashboardInstance');
+      (dashboardInstance as CumulioDashboard).getAccessibleDashboards().then(dashboards => {
+        console.log(dashboards);
+        dashboardInstance.setAttribute('dashboardId', dashboards[0].id);
+      });
+    }, 100);
     root.innerHTML = `
     <div class="position-relative">
       <nav class="navbar navbar-dark" id="portal-navbar" style="
