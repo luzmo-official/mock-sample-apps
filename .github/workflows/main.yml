@@ -39,13 +39,13 @@ jobs:
           rm -rf *.zip
           cd mock-fe/
           cd vue-mock-hello-world
-          zip -r ../../vue-mock-hello-world.zip *
+          zip -r ../../vue-mock-hello-world.zip * .*
           cd ../react-mock-hello-world
-          zip -r ../../react-mock-hello-world.zip *
+          zip -r ../../react-mock-hello-world.zip * .*
           cd ../html-mock-hello-world
-          zip -r ../../html-mock-hello-world.zip *
+          zip -r ../../html-mock-hello-world.zip * .*
           cd ../angular-mock-hello-world
-          zip -r ../../angular-mock-hello-world.zip *
+          zip -r ../../angular-mock-hello-world.zip * .*
 
       - name: Zip BE Files
         run: |
