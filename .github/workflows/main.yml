@@ -39,27 +39,27 @@ jobs:
           rm -rf *.zip
           cd mock-fe/
           cd vue-mock-hello-world
-          zip -r ../../vue-mock-hello-world.zip * .*
+          zip -r ../../vue-mock-hello-world.zip * .gitignore
           cd ../react-mock-hello-world
-          zip -r ../../react-mock-hello-world.zip * .*
+          zip -r ../../react-mock-hello-world.zip * .gitignore
           cd ../html-mock-hello-world
-          zip -r ../../html-mock-hello-world.zip * .*
+          zip -r ../../html-mock-hello-world.zip * .gitignore
           cd ../angular-mock-hello-world
-          zip -r ../../angular-mock-hello-world.zip * .*
+          zip -r ../../angular-mock-hello-world.zip * .gitignore
 
       - name: Zip BE Files
         run: |
           cd mock-be/
           cd dotnet-mock-hello-world
-          zip -r ../../dotnet-mock-hello-world.zip * .*
+          zip -r ../../dotnet-mock-hello-world.zip * .env.example .gitignore
           cd ../python-mock-hello-world
-          zip -r ../../python-mock-hello-world.zip * .*
+          zip -r ../../python-mock-hello-world.zip * .env.example .gitignore
           cd ../java-mock-hello-world
-          zip -r ../../java-mock-hello-world.zip * .*
+          zip -r ../../java-mock-hello-world.zip * .env.example .gitignore
           cd ../nodejs-mock-hello-world
-          zip -r ../../nodejs-mock-hello-world.zip * .*
+          zip -r ../../nodejs-mock-hello-world.zip * .env.example .gitignore
           cd ../php-mock-hello-world
-          zip -r ../../php-mock-hello-world.zip * .*
+          zip -r ../../php-mock-hello-world.zip * .env.example .gitignore
 
       # Runs a set of commands using the runners shell
       - name: Upload an invalidate
