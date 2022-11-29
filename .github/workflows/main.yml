@@ -51,15 +51,15 @@ jobs:
         run: |
           cd mock-be/
           cd dotnet-mock-hello-world
-          zip -r ../../dotnet-mock-hello-world.zip *
+          zip -r ../../dotnet-mock-hello-world.zip * .*
           cd ../python-mock-hello-world
-          zip -r ../../python-mock-hello-world.zip *
+          zip -r ../../python-mock-hello-world.zip * .*
           cd ../java-mock-hello-world
-          zip -r ../../java-mock-hello-world.zip *
+          zip -r ../../java-mock-hello-world.zip * .*
           cd ../nodejs-mock-hello-world
-          zip -r ../../nodejs-mock-hello-world.zip *
+          zip -r ../../nodejs-mock-hello-world.zip * .*
           cd ../php-mock-hello-world
-          zip -r ../../php-mock-hello-world.zip *
+          zip -r ../../php-mock-hello-world.zip * .*
 
       # Runs a set of commands using the runners shell
       - name: Upload an invalidate
