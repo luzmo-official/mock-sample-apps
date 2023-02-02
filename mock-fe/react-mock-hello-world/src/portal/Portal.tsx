@@ -8,10 +8,10 @@ const appServer = 'APP_SERVER_HERE';
 const apiHost = 'API_HOST_HERE';
 
 function Portal() {
-  const [dashboardId, setDashboardId] = useState('');
+  const [dashboardId, setDashboardId] = useState<string | undefined>('');
   const navigate = useNavigate();
-  const [key, setKey] = useState(null);
-  const [token, setToken] = useState(null);
+  const [key, setKey] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<{email?: string; username?: string; brand?: string;}>({});
   const ref = useRef<CumulioDashboard>(null);
   useEffect(() => {
@@ -33,7 +33,7 @@ function Portal() {
             ref.current?.getAccessibleDashboards().then(dashboards => {
               console.log(dashboards);
               if (dashboards) {
-                setDashboardId(dashboards[0].id);
+                setDashboardId(dashboards[0]?.id);
               }
             });
           }, 100);
