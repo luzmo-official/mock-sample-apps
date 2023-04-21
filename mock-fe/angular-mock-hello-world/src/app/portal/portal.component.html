@@ -12,6 +12,7 @@
   </nav>
   <div class="container mt-4">
     <cumulio-dashboard
+      #dashboardInstance
       *ngIf="key && token"
       [dashboardId]="dashboardId"
       [authKey]="key"
