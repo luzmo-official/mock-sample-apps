@@ -55,6 +55,7 @@ const render = (root: HTMLElement, auth?: {
       </nav>
       <div class="container mt-4">
         <cumulio-dashboard
+          id="dashboardInstance"
           authKey="${data.key}"
           authToken="${data.token}"
           dashboardId="${dashboardId}"
